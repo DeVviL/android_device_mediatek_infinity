@@ -128,10 +128,6 @@ static int write_str(char const* path, char *str) {
 	}
 }
 
-static int is_lit(struct light_state_t const* state) {
-	return state->color & 0x00ffffff;
-}
-
 static int rgb_to_brightness(struct light_state_t const* state) {
 	int color = state->color & 0x00ffffff;
 	return ((77 * ((color >> 16) & 0x00ff)) + (150 * ((color >> 8) & 0x00ff)) + (29 * (color & 0x00ff))) >> 8;
